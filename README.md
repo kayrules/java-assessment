@@ -28,12 +28,58 @@ Password: Pa55word!
 | DELETE | /api/v1/downtime/adhoc/{id}    | cru[D] - Delete single adhoc record by id   |
 
 
-## CURL 
+## CURL Examples
+Get server date
 ```
 curl -X GET \
   http://localhost:8080/api/v1/downtime/serverDate \
   -H 'Authorization: Basic YWRtaW46UGE1NXdvcmQh' 
 ```
+
+[C]rud - Create Adhoc record
+```
+curl -X POST \
+  http://localhost:8030/api/v1/downtime/adhoc \
+  -H 'Authorization: Basic YWRtaW46UGE1NXdvcmQh' \
+  -F date=2019-02-01
+```
+
+c[R]ud - GET all adhoc records
+```
+curl -X GET \
+  http://localhost:8030/api/v1/downtime/adhoc \
+  -H 'Authorization: Basic YWRtaW46UGE1NXdvcmQh'
+```
+
+c[R]ud - GET all soft-deleted adhoc records
+```
+curl -X GET \
+  http://localhost:8030/api/v1/downtime/adhoc/deleted \
+  -H 'Authorization: Basic YWRtaW46UGE1NXdvcmQh' 
+```
+
+c[R]ud - GET single adhoc record by id
+```
+curl -X GET \
+  http://localhost:8030/api/v1/downtime/adhoc/1 \
+  -H 'Authorization: Basic YWRtaW46UGE1NXdvcmQh' 
+```
+
+cr[U]d - Update single adhoc record by id
+```
+curl -X PUT \
+  http://localhost:8030/api/v1/downtime/adhoc/1 \
+  -H 'Authorization: Basic YWRtaW46UGE1NXdvcmQh' \
+  -F date=2019-05-05
+```
+
+cru[D] - Delete single adhoc record by id
+```
+curl -X DELETE \
+  http://localhost:8030/api/v1/downtime/adhoc/3 \
+  -H 'Authorization: Basic YWRtaW46UGE1NXdvcmQh'
+```
+
 
 
 # Advanced Notes
