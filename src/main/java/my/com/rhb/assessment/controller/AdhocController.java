@@ -27,7 +27,7 @@ public class AdhocController {
     AdhocRepository adhocRepository;
 
     /**
-     * [C]rud - POST adhoc date
+     * [C]rud - Create Adhoc record
      *
      * @return the adhoc post result and data source ID in json format
      */
@@ -63,7 +63,7 @@ public class AdhocController {
     }
 
     /**
-     * c[R]ud - GET all adhoc dates
+     * c[R]ud - GET all adhoc records
      *
      * @return the adhoc post result and data source ID in json format
      */
@@ -75,7 +75,7 @@ public class AdhocController {
     }
 
     /**
-     * c[R]ud - GET single adhoc dates by id
+     * c[R]ud - GET single adhoc record by id
      *
      * @return the adhoc post result and data source ID in json format
      */
@@ -89,7 +89,7 @@ public class AdhocController {
     }
 
     /**
-     * c[R]ud - GET all soft-deleted adhoc dates
+     * c[R]ud - GET all soft-deleted adhoc records
      *
      * @return the adhoc post result for deleted records in json format
      */
@@ -101,7 +101,7 @@ public class AdhocController {
     }
 
     /**
-     * cr[U]d - Update single adhoc date by id
+     * cr[U]d - Update single adhoc record by id
      *
      * @return the adhoc post result and data source ID in json format
      */
@@ -130,7 +130,7 @@ public class AdhocController {
     }
 
     /**
-     * cru[D] - Delete single adhoc date by id
+     * cru[D] - Delete single adhoc record by id
      *
      * @return the adhoc post result and data source ID in json format
      */

@@ -1,4 +1,4 @@
-# database connection properties 
+# Application Configuration
 Edit `resources/application.properties` file for application configuration
 ```
 server.port = 8080
@@ -28,11 +28,19 @@ Password: Pa55word!
 | DELETE | /api/v1/downtime/adhoc/{id}    | cru[D] - Delete single adhoc record by id   |
 
 
+## CURL 
+```
+curl -X GET \
+  http://localhost:8080/api/v1/downtime/serverDate \
+  -H 'Authorization: Basic YWRtaW46UGE1NXdvcmQh' 
+```
+
+
 # Advanced Notes
 
 ### starting mysql docker
 ```
-docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d mysql:latest
+docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=Pa55word! -d mysql:latest
 ```
 
 ### entering mysql client
