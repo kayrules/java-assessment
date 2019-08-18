@@ -1,0 +1,36 @@
+version: "2"
+
+services:
+  app:
+    container_name: "app"
+    image: "metz/wildfly"
+    environment:
+      - WILDFLY_USER=admin
+      - WILDFLY_PASS=Pa55word!
+      - DB_NAME=rhb_downtime
+      - DB_USER=root
+      - DB_PASS=Pa55word!
+      - DB_URI=db:3306
+    depends_on:
+      - db
+    ports:
+      - "8080:8080" # application
+      - "9990:9990" # admin console
+
+  db:
+    container_name: "db"
+    image: "mysql:latest"
+    environment:
+      - MYSQL_DATABASE=rhb_downtime
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=Pa55word!
+      - MYSQL_ROOT_PASSWORD=Pa55word!
+    volumes:
+      - ./workdir/db/init/:/docker-entrypoint-initdb.d/ # init database
+      - ./workdir/db/data/:/var/lib/mysql/              # data storage
+    ports:
+      - "3306:3306"
+
+networks:
+    default:
+        driver: bridge
